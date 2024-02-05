@@ -6,7 +6,11 @@
   "scripts": {
     "dev:fe": "lerna run dev --scope=real_estate_client",
     "dev:be": "lerna run dev --scope=real_estate_server",
-    "dev": "lerna run dev"
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "start:fe": "lerna run start --scope=real_estate_client",
+    "start:be": "lerna run start --scope=real_estate_server",
+    "start": "lerna run start"
   },
   "dependencies": {},
   "devDependencies": {

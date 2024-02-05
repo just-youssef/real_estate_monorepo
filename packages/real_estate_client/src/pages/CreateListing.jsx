@@ -6,7 +6,7 @@ const CreateListing = () => {
 
     const handleCreate = async (bodyData) => {
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/create`, {
+            const res = await fetch(`/api/listing/create`, {
                 method: "POST",
                 headers: {
                     'x-auth-token': token,

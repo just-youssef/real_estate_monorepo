@@ -9,6 +9,7 @@ import { v2 as cloudinary } from 'cloudinary' ;
 import express, { urlencoded, json } from "express";
 import cors from 'cors';
 import helmet from 'helmet';
+import path from "path";
 
 // routers
 import userRouter from './routes/user.route.js';
@@ -34,6 +35,9 @@ cloudinary.config({
 
 // initialize app
 const app = express();
+
+// render react
+app.use(express.static(path.join(import.meta.dirname, "..", "real_estate_client", "dist")));
 
 // using third party modules
 app.use(cors());

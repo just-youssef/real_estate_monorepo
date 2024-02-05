@@ -33,7 +33,7 @@ const Profile = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/delete`, {
+      const res = await fetch(`/api/user/delete`, {
         method: 'DELETE',
         headers: {
           'x-auth-token': token,
@@ -61,7 +61,7 @@ const Profile = () => {
     imageData.append('file', avatar, avatar.name);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/cloudinary/uploadFile`, {
+      const res = await fetch(`/api/cloudinary/uploadFile`, {
         method: 'POST',
         headers: {
           'x-auth-token': token,
@@ -94,7 +94,7 @@ const Profile = () => {
     setFormDataError({});
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/update`, {
+      const res = await fetch(`/api/user/update`, {
         method: "POST",
         headers: {
           'x-auth-token': token,
@@ -137,7 +137,7 @@ const Profile = () => {
     setPasswordFormError({})
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/changePassword`, {
+      const res = await fetch(`/api/user/changePassword`, {
         method: "POST",
         headers: {
           'x-auth-token': token,

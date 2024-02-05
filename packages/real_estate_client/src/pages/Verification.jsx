@@ -17,7 +17,7 @@ const Verification = () => {
     setOpenModal(false);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/verfication/resend/${id}`)
+      const res = await fetch(`/api/user/verfication/resend/${id}`)
       const data = await res.json();
 
       // console.log(data);
@@ -28,7 +28,7 @@ const Verification = () => {
 
   const checkEmailVerfication = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/verfication/check/${id}`)
+      const res = await fetch(`/api/user/verfication/check/${id}`)
       const data = await res.json();
 
       if (data.verified) {

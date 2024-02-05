@@ -27,7 +27,7 @@ const ListingDetails = () => {
   useEffect(() => {
     const getListingDetails = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/${id}`);
+        const res = await fetch(`/api/listing/${id}`);
         const data = await res.json();
 
         if (res.ok) setListing(data)
@@ -43,7 +43,7 @@ const ListingDetails = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/delete/${listing._id}`, {
+      const res = await fetch(`/api/listing/delete/${listing._id}`, {
         method: 'DELETE',
         headers: {
           'x-auth-token': token,

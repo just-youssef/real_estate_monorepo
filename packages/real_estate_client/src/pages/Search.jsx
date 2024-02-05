@@ -41,7 +41,7 @@ const Search = () => {
       const searchQuery = urlParams.toString();
 
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/search?${searchQuery}`);
+        const res = await fetch(`/api/listing/search?${searchQuery}`);
         const data = await res.json();
         setLoading(false);
 
@@ -106,7 +106,7 @@ const Search = () => {
     setMoreLoading(true);
     setShowMore(false);
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/search?${searchQuery}`);
+      const res = await fetch(`/api/listing/search?${searchQuery}`);
       const data = await res.json();
       setMoreLoading(false);
 

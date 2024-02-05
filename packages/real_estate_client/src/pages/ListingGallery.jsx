@@ -10,7 +10,7 @@ const ListingGallery = () => {
     useEffect(() => {
         const getUserListings = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/me`, {
+                const res = await fetch(`/api/listing/me`, {
                     headers: {
                         "x-auth-token": token
                     }

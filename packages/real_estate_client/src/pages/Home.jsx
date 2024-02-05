@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/search?offer=true&limit=4`);
+        const res = await fetch(`/api/listing/search?offer=true&limit=4`);
         const data = await res.json();
 
         if (res.ok) {
@@ -34,7 +34,7 @@ const Home = () => {
 
     const fetchRentListings = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/search?type=rent&limit=4`);
+        const res = await fetch(`/api/listing/search?type=rent&limit=4`);
         const data = await res.json();
 
         if (res.ok) {
@@ -48,7 +48,7 @@ const Home = () => {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/search?type=sell&limit=4`);
+        const res = await fetch(`/api/listing/search?type=sell&limit=4`);
         const data = await res.json();
 
         if (res.ok) {

@@ -8,8 +8,7 @@
     "dev:be": "lerna run dev --scope=real_estate_server",
     "dev": "lerna run dev",
     "build": "lerna run build",
-    "start:fe": "lerna run start --scope=real_estate_client",
-    "start:be": "lerna run start --scope=real_estate_server",
+    "preview": "lerna run preview",
     "start": "lerna run start"
   },
   "dependencies": {},

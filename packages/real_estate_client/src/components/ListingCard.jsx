@@ -14,7 +14,7 @@ const ListingCard = ({ listing, setListings }) => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/delete/${listing._id}`, {
+      const res = await fetch(`/api/listing/delete/${listing._id}`, {
         method: 'DELETE',
         headers: {
           'x-auth-token': token,

@@ -12,7 +12,7 @@ const UpdateListing = () => {
     useEffect(() => {
         const getListingDetails = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/${id}`);
+                const res = await fetch(`/api/listing/${id}`);
                 const data = await res.json();
 
                 if(res.ok) setListing(data)
@@ -26,7 +26,7 @@ const UpdateListing = () => {
 
     const handleUpdate = async (bodyData) => {
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_ROOT}/listing/update/${id}`, {
+            const res = await fetch(`/api/listing/update/${id}`, {
                 method: "PUT",
                 headers: {
                     'x-auth-token': token,

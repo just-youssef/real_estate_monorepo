@@ -50,7 +50,7 @@ const ListingForm = ({ listing, handleFormAction }) => {
     Object.keys(imagesArray).forEach(key => imageArrayData.append('files', imagesArray[key]))
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/cloudinary/uploadMultiple`, {
+      const res = await fetch(`/api/cloudinary/uploadMultiple`, {
         method: "POST",
         headers: {
           "x-auth-token": token

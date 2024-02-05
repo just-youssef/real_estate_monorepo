@@ -13,7 +13,7 @@ const VerificationConfirm = () => {
   const confirmIdentity = async () => {
     setLoading(true);
     try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/verify/${id}/${token}`)
+        const res = await fetch(`/api/user/verify/${id}/${token}`)
         const data = await res.json();
         setLoading(false);
 
@@ -31,7 +31,7 @@ const VerificationConfirm = () => {
 
     const checkEmailVerfication = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/verfication/check/${id}`)
+        const res = await fetch(`/api/user/verfication/check/${id}`)
         const data = await res.json();
 
         if (data.verified) {

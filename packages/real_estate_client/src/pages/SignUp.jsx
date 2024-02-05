@@ -38,7 +38,7 @@ const SignUp = () => {
     setError({});
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_ROOT}/user/signup`, {
+      const res = await fetch(`/api/user/signup`, {
         method: "POST",
         headers: {
           'Accept': 'application/json',

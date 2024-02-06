@@ -37,7 +37,15 @@ cloudinary.config({
 const app = express();
 
 // render react
-app.use(express.static(path.join(path.resolve(), "..", "real_estate_client", "dist")));
+const root = path.join(path.resolve(), "..", "real_estate_client", "dist")
+app.use(express.static(root));
+app.get('*', (req, res, nxt) => {
+    if (!req.url.startsWith("/api")) {
+        return res.sendFile(path.join(root, 'index.html'));
+    }
+
+    nxt();
+});
 
 // using third party modules
 app.use(cors());
